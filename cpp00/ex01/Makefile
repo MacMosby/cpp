@@ -10,4 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
+SRC := main.cpp PhoneBook.cpp Contact.cpp
 
+all:
+	g++ -Wall -Wextra -Wno-used -Werror $(SRC)

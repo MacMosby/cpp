@@ -10,4 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PHONEBOOK_H
+# define PHONEBOOK_H
 
+# include "Contact.hpp"
+
+class PhoneBook
+{
+
+public:
+
+	Contact contacts[8];
+
+	PhoneBook(void);
+	~PhoneBook(void);
+
+	void	add(void) const;
+	void	search(void) const;
+};
+
+#endif

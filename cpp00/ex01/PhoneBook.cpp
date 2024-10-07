@@ -10,4 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "PhoneBook.hpp"
+#include <iostream>
 
+PhoneBook::PhoneBook(void)
+{
+	std::cout << "PhoneBook Constructor called" << std::endl;
+}
+
+PhoneBook::~PhoneBook(void)
+{
+	std::cout << "PhoneBook Destructor called" << std::endl;
+}
+
+void	PhoneBook::add(void) const
+{
+	std::cout << "add contact" << std::endl;
+}
+
+void	PhoneBook::search(void) const
+{
+	std::cout << "search contact" << std::endl;
+}
