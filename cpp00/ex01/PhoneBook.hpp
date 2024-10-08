@@ -25,8 +25,9 @@ public:
 	PhoneBook(void);
 	~PhoneBook(void);
 
-	void	add(void) const;
+	void	add(void);
 	void	search(void) const;
+	int		compare(Contact *other) const;
 };
 
 #endif

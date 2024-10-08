@@ -10,7 +10,29 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRC := main.cpp PhoneBook.cpp Contact.cpp
+NAME := awesome_phonebook
 
-all:
-	g++ -Wall -Wextra -Wno-used -Werror $(SRC)
+SRC := main.cpp Contact.cpp PhoneBook.cpp
+
+OBJ := $(SRC:%.cpp=%.o)
+
+CPP := c++
+
+WFLAGS := -Wall -Wextra -Werror
+
+STDFLAG := -std=c++98
+
+all:	$(NAME)
+
+$(NAME):	$(OBJ)
+	$(CPP) $(WFLAGS) $(STDFLAG) -o $(NAME) $(OBJ)
+
+clean:
+	rm -f *.o
+
+fclean:	clean
+	rm -f $(NAME)
+
+re:	fclean all
+
+.PHONY: all clean fclean re

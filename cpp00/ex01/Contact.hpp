@@ -18,13 +18,14 @@ class Contact
 
 public:
 
-	char const	*first_name;
-	char const	*last_name;
-	char const	*nickname;
-	char const	*phone_number;
-	char const	*darkest_secret;
+	std::string first_name;
+	std::string last_name;
+	std::string nickname;
+	std::string phone_number;
+	std::string darkest_secret;
 
-	Contact(char const *first, char const *last, char const *nick, char const *num, char const *secret);
+	Contact(void);
+	Contact(std::string first, std::string last, std::string nick, std::string num, std::string secret);
 	~Contact(void);
 
 };

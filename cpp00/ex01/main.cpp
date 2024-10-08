@@ -11,12 +11,13 @@
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+#include "Contact.hpp"
 #include <iostream>
 
 int	main()
 {
 	PhoneBook	phoneBook;
-	char		*input;
+	std::string	input;
 
 	while (1)
 	{

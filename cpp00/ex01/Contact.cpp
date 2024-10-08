@@ -13,10 +13,15 @@
 #include "Contact.hpp"
 #include <iostream>
 
-Contact::Contact(char const *first, char const *last, char const *nick, char const *num, char const *secret)
+Contact::Contact(void)
+{
+	std::cout << "Contact Default Constructor called" << std::endl;
+}
+
+Contact::Contact(std::string first, std::string last, std::string nick, std::string num, std::string secret)
 : first_name(first), last_name(last), nickname(nick), phone_number(num), darkest_secret(secret)
 {
-	std::cout << "Contact Constructor called" << std::endl;
+	std::cout << "Actual Contact Constructor called" << std::endl;
 	//this->first_name = first;
 	std::cout << "first name: " << this->first_name << std::endl;
 	//this->last_name = last;
