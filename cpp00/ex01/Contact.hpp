@@ -13,6 +13,8 @@
 #ifndef CONTACT_H
 # define CONTACT_H
 
+# include <string>
+
 class Contact
 {
 
@@ -27,7 +29,6 @@ public:
 	Contact(void);
 	Contact(std::string first, std::string last, std::string nick, std::string num, std::string secret);
 	~Contact(void);
-
 };
 
 #endif

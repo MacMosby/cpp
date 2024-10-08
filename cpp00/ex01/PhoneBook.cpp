@@ -24,7 +24,7 @@ PhoneBook::~PhoneBook(void)
 	std::cout << "PhoneBook Destructor called" << std::endl;
 }
 
-void	PhoneBook::add(void)
+Contact	PhoneBook::add(void)
 {
 	std::string	first;
 	std::string	last;
@@ -45,14 +45,12 @@ void	PhoneBook::add(void)
 	std::cin >> secret;
 
 	Contact entry(first, last, nick, num, secret);
+	std::cout << "End of add function" << std::endl;
+	return (entry);
 }
 
 void	PhoneBook::search(void) const
 {
+	std::cout << this->contacts[0].first_name << std::endl;
 	std::cout << "search contact" << std::endl;
-}
-
-int		PhoneBook::compare(Contact *other) const
-{
-	
 }

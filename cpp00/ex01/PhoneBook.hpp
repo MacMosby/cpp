@@ -20,14 +20,13 @@ class PhoneBook
 
 public:
 
-	Contact contacts[8];
+	Contact	contacts[8];
 
 	PhoneBook(void);
 	~PhoneBook(void);
 
-	void	add(void);
+	Contact	add(void);
 	void	search(void) const;
-	int		compare(Contact *other) const;
 };
 
 #endif
