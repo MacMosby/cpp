@@ -25,8 +25,14 @@ public:
 	PhoneBook(void);
 	~PhoneBook(void);
 
-	Contact	add(void);
+	void	add(void);
+	void	place_in_phonebook(Contact entry);
+	void	replace_oldest_entry(Contact new_entry);
 	void	search(void) const;
+	void	display_all_entries(void) const;
+	void	display_contact_line(Contact entry, int index) const;
+	void	display_contact_detail(std::string contact_detail) const;
+	void	display_contact(int index) const;
 };
 
 #endif

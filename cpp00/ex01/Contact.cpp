@@ -14,23 +14,15 @@
 #include <iostream>
 
 Contact::Contact(void)
+: first_name(""), last_name(""), nickname(""), phone_number(""), darkest_secret("")
 {
-	std::cout << "Contact Default Constructor called" << std::endl;
 }
 
 Contact::Contact(std::string first, std::string last, std::string nick, std::string num, std::string secret)
 : first_name(first), last_name(last), nickname(nick), phone_number(num), darkest_secret(secret)
 {
-	std::cout << "Actual Contact Constructor called" << std::endl;
-	std::cout << "first name: " << this->first_name << std::endl;
-	std::cout << "last name: " << this->last_name << std::endl;
-	std::cout << "nickname: " << this->nickname << std::endl;
-	std::cout << "num: " << this->phone_number << std::endl;
-	std::cout << "secret: " << this->darkest_secret << std::endl;
 }
 
 Contact::~Contact(void)
 {
-	std::cout << "HELLO " << this->first_name << std::endl;
-	std::cout << "Contact Destructor called" << std::endl;
 }

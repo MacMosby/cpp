@@ -16,15 +16,42 @@
 
 PhoneBook::PhoneBook(void)
 {
-	std::cout << "PhoneBook Constructor called" << std::endl;
 }
 
 PhoneBook::~PhoneBook(void)
 {
-	std::cout << "PhoneBook Destructor called" << std::endl;
 }
 
-Contact	PhoneBook::add(void)
+void	PhoneBook::replace_oldest_entry(Contact new_entry)
+{
+	int	i = 0;
+
+	while (i < 7)
+	{
+		this->contacts[i] = this->contacts[i + 1];
+		i++;
+	}
+	this->contacts[i] = new_entry;
+}
+
+void	PhoneBook::place_in_phonebook(Contact entry)
+{
+	int	i = 0;
+
+	while (i < 8)
+	{
+		if (this->contacts[i].first_name == "")
+		{
+			this->contacts[i] = entry;
+			break ;
+		}
+		i++;
+	}
+	if (i == 8)
+		this->replace_oldest_entry(entry);
+}
+
+void	PhoneBook::add(void)
 {
 	std::string	first;
 	std::string	last;
@@ -33,24 +60,133 @@ Contact	PhoneBook::add(void)
 	std::string	secret;
 
 	std::cout << "Please enter your information." << std::endl;
-	std::cout << "First name: " << std::endl;
+	std::cout << "First name: ";
 	std::cin >> first;
-	std::cout << "Last name: " << std::endl;
+	while (first == "")
+	{
+		std::cout << "Invalid input, please try again: ";
+		std::cin >> first;
+	}
+	std::cout << "Last name: ";
 	std::cin >> last;
-	std::cout << "Nickname: " << std::endl;
+	while (last == "")
+	{
+		std::cout << "Invalid input, please try again: ";
+		std::cin >> last;
+	}
+	std::cout << "Nickname: ";
 	std::cin >> nick;
-	std::cout << "Phone number: " << std::endl;
+	while (nick == "")
+	{
+		std::cout << "Invalid input, please try again: ";
+		std::cin >> nick;
+	}
+	std::cout << "Phone number: ";
 	std::cin >> num;
-	std::cout << "Darkest secret: " << std::endl;
+	while (num == "")
+	{
+		std::cout << "Invalid input, please try again: ";
+		std::cin >> num;
+	}
+	std::cout << "Darkest secret: ";
 	std::cin >> secret;
+	while (secret == "")
+	{
+		std::cout << "Invalid input, please try again: ";
+		std::cin >> secret;
+	}
 
 	Contact entry(first, last, nick, num, secret);
-	std::cout << "End of add function" << std::endl;
-	return (entry);
+	this->place_in_phonebook(entry);
+}
+
+void	PhoneBook::display_contact_detail(std::string contact_detail) const
+{
+	int	i = 0;
+	int	size = contact_detail.size();
+
+	if (size > 10)
+	{
+		while (i < 9)
+		{
+			std::cout << contact_detail[i];
+			i++;
+		}
+		std::cout << ".";
+	}
+	else
+	{
+		i = 10 - size;
+		while (i > 0)
+		{
+			std::cout << " ";
+			i--;
+		}
+		std::cout << contact_detail;
+	}
+}
+
+void	PhoneBook::display_contact(int index) const
+{
+	std::cout << std::endl;
+	std::cout << "First name: " << this->contacts[index].first_name << std::endl;
+	std::cout << "Last name: " << this->contacts[index].last_name << std::endl;
+	std::cout << "Nickname: " << this->contacts[index].nickname << std::endl;
+	std::cout << "Phone number: " << this->contacts[index].phone_number << std::endl;
+	std::cout << "Darkest secret: " << this->contacts[index].darkest_secret << std::endl;
+	std::cout << std::endl;
+}
+
+void	PhoneBook::display_contact_line(Contact entry, int index) const
+{
+	std::cout << "         " << index << "|";
+	display_contact_detail(entry.first_name);
+	std::cout << "|";
+	display_contact_detail(entry.last_name);
+	std::cout << "|";
+	display_contact_detail(entry.nickname);
+	std::cout << std::endl;
+}
+
+void	PhoneBook::display_all_entries(void) const
+{
+	int	i = 0;
+
+	std::cout << std::endl;
+	display_contact_detail("index");
+	std::cout << "|";
+	display_contact_detail("first name");
+	std::cout << "|";
+	display_contact_detail("last name");
+	std::cout << "|";
+	display_contact_detail("nickname");
+	std::cout << std::endl;
+
+	while (i < 8)
+	{
+		if (this->contacts[i].first_name != "")
+			display_contact_line(this->contacts[i], i + 1);
+		i++;
+	}
+	std::cout << std::endl;
 }
 
 void	PhoneBook::search(void) const
 {
-	std::cout << this->contacts[0].first_name << std::endl;
-	std::cout << "search contact" << std::endl;
+	int			index;
+
+	if (this->contacts[0].first_name == "")
+	{
+		std::cout << "Phonebook empty - No entries available." << std::endl;
+		return ;
+	}
+	this->display_all_entries();
+	std::cout << "Who do you want to call? Choose index: ";
+	std::cin >> index;
+	while (index < 1 || index > 8 || this->contacts[index - 1].first_name == "")
+	{
+		std::cout << "Invalid input, please try again." << std::endl;
+		std::cin >> index;
+	}
+	this->display_contact(index - 1);
 }

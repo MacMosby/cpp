@@ -27,11 +27,8 @@ int	main()
 		std::cin >> input;
 		if (input == "ADD")
 		{
-			Contact entry = phoneBook.add();
+			phoneBook.add();
 			std::cout << "Right after add function" << std::endl;
-			std::cout << "Right before adding entry to PB" << std::endl;
-			phoneBook.contacts[0] = entry;
-			std::cout << "Right after adding entry to PB" << std::endl;
 		}
 		else if (input == "SEARCH")
 		{
