@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mrodenbu <mrodenbu@student.42berlin.d      +#+  +:+       +#+        */
+/*   By: marcrodenbusch <marcrodenbusch@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 10:29:59 by mrodenbu          #+#    #+#             */
-/*   Updated: 2024/10/07 10:30:01 by mrodenbu         ###   ########.fr       */
+/*   Updated: 2024/10/22 00:34:15 by marcrodenbu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -203,10 +203,14 @@ void	PhoneBook::search(void) const
 	this->display_all_entries();
 	std::cout << "Who do you want to call? Choose index: ";
 	std::cin >> index;
+	if (std::cin.eof())
+		return;
 	while (index < 1 || index > 8 || this->contacts[index - 1].first_name == "")
 	{
 		std::cout << "Invalid input, please try again." << std::endl;
 		std::cin >> index;
+		if (std::cin.eof())
+		return;
 	}
 	this->display_contact(index - 1);
 }

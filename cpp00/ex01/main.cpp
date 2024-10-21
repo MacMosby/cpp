@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mrodenbu <mrodenbu@student.42berlin.d      +#+  +:+       +#+        */
+/*   By: marcrodenbusch <marcrodenbusch@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:19:04 by mrodenbu          #+#    #+#             */
-/*   Updated: 2024/10/07 11:19:09 by mrodenbu         ###   ########.fr       */
+/*   Updated: 2024/10/22 00:30:30 by marcrodenbu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,12 @@ int	main()
 			phoneBook.add();
 			if (std::cin.eof())
 				break;
-			std::cout << "Right after add function" << std::endl;
 		}
 		else if (input.compare("SEARCH") == 0)
 		{
 			phoneBook.search();
+			if (std::cin.eof())
+				break;
 		}
 		else if (input.compare("EXIT") == 0)
 		{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mrodenbu <mrodenbu@student.42berlin.d      +#+  +:+       +#+        */
+/*   By: marcrodenbusch <marcrodenbusch@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 10:31:22 by mrodenbu          #+#    #+#             */
-/*   Updated: 2024/10/07 10:31:24 by mrodenbu         ###   ########.fr       */
+/*   Updated: 2024/10/22 00:34:57 by marcrodenbu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Contact
 {
 
 public:
-
+	// attributes must be private and getters and setters are needed !!!
 	std::string first_name;
 	std::string last_name;
 	std::string nickname;

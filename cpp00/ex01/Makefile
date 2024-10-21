@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mrodenbu <mrodenbu@student.42berlin.d      +#+  +:+       +#+         #
+#    By: marcrodenbusch <marcrodenbusch@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/07 10:29:13 by mrodenbu          #+#    #+#              #
-#    Updated: 2024/10/07 10:29:15 by mrodenbu         ###   ########.fr        #
+#    Updated: 2024/10/22 00:32:29 by marcrodenbu      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,9 @@ all:	$(NAME)
 
 $(NAME):	$(OBJ)
 	$(CPP) $(WFLAGS) $(STDFLAG) -o $(NAME) $(OBJ)
+
+$(OBJ):
+	$(CPP) $(WFLAGS) $(STDFLAG) -c $(SRC)
 
 clean:
 	rm -f *.o
