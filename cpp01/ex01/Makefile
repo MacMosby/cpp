@@ -10,9 +10,9 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME := megaphone
+NAME := Moar_brainz!
 
-SRC := megaphone.cpp
+SRC := main.cpp Zombie.cpp zombieHorde.cpp
 
 OBJ := $(SRC:%.cpp=%.o)
 

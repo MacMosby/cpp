@@ -10,9 +10,9 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME := megaphone
+NAME := BraiiiiiiinnnzzzZ
 
-SRC := megaphone.cpp
+SRC := main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
 
 OBJ := $(SRC:%.cpp=%.o)
 
