@@ -62,38 +62,58 @@ void	PhoneBook::add(void)
 	std::cout << "Please enter your information." << std::endl;
 	std::cout << "First name: ";
 	std::cin >> first;
+	if (std::cin.eof())
+		return;
 	while (first == "")
 	{
 		std::cout << "Invalid input, please try again: ";
 		std::cin >> first;
+		if (std::cin.eof())
+			return;
 	}
 	std::cout << "Last name: ";
 	std::cin >> last;
+	if (std::cin.eof())
+		return;
 	while (last == "")
 	{
 		std::cout << "Invalid input, please try again: ";
 		std::cin >> last;
+		if (std::cin.eof())
+			return;
 	}
 	std::cout << "Nickname: ";
 	std::cin >> nick;
+	if (std::cin.eof())
+		return;
 	while (nick == "")
 	{
 		std::cout << "Invalid input, please try again: ";
 		std::cin >> nick;
+		if (std::cin.eof())
+			return;
 	}
 	std::cout << "Phone number: ";
 	std::cin >> num;
+	if (std::cin.eof())
+		return;
 	while (num == "")
 	{
 		std::cout << "Invalid input, please try again: ";
 		std::cin >> num;
+		if (std::cin.eof())
+			return;
 	}
 	std::cout << "Darkest secret: ";
 	std::cin >> secret;
+	if (std::cin.eof())
+		return;
 	while (secret == "")
 	{
 		std::cout << "Invalid input, please try again: ";
 		std::cin >> secret;
+		if (std::cin.eof())
+			return;
 	}
 
 	Contact entry(first, last, nick, num, secret);

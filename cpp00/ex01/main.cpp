@@ -25,16 +25,21 @@ int	main()
 		std::cout << "Please type SEARCH if you want to search for a contact." << std::endl;
 		std::cout << "Please type EXIT to exit the phone book." << std::endl;
 		std::cin >> input;
-		if (input == "ADD")
+		//std::getline(std::cin, input);
+		if (std::cin.eof())
+			break;
+		if (input.compare("ADD") == 0)
 		{
 			phoneBook.add();
+			if (std::cin.eof())
+				break;
 			std::cout << "Right after add function" << std::endl;
 		}
-		else if (input == "SEARCH")
+		else if (input.compare("SEARCH") == 0)
 		{
 			phoneBook.search();
 		}
-		else if (input == "EXIT")
+		else if (input.compare("EXIT") == 0)
 		{
 			break;
 		}
