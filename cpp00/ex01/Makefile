@@ -27,8 +27,8 @@ all:	$(NAME)
 $(NAME):	$(OBJ)
 	$(CPP) $(WFLAGS) $(STDFLAG) -o $(NAME) $(OBJ)
 
-$(OBJ):
-	$(CPP) $(WFLAGS) $(STDFLAG) -c $(SRC)
+%.o: %.cpp
+	$(CPP) $(WFLAGS) $(STDFLAG) -c -o $@ $<
 
 clean:
 	rm -f *.o

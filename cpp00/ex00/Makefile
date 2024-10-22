@@ -27,6 +27,9 @@ all:	$(NAME)
 $(NAME):	$(OBJ)
 	$(CPP) $(WFLAGS) $(STDFLAG) -o $(NAME) $(OBJ)
 
+%.o: %.cpp
+	$(CPP) $(WFLAGS) $(STDFLAG) -c -o $@ $<
+
 clean:
 	rm -f *.o
 
