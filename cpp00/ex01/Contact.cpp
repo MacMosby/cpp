@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mrodenbu <mrodenbu@student.42berlin.d      +#+  +:+       +#+        */
+/*   By: marcrodenbusch <marcrodenbusch@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 10:31:13 by mrodenbu          #+#    #+#             */
-/*   Updated: 2024/10/07 10:31:15 by mrodenbu         ###   ########.fr       */
+/*   Updated: 2024/10/27 13:52:05 by marcrodenbu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,29 @@ Contact::Contact(std::string first, std::string last, std::string nick, std::str
 
 Contact::~Contact(void)
 {
+}
+
+std::string	Contact::get_first_name(void)
+{
+	return (this->first_name);
+}
+
+std::string	Contact::get_last_name(void)
+{
+	return (this->last_name);
+}
+
+std::string	Contact::get_nickname(void)
+{
+	return (this->nickname);
+}
+
+std::string	Contact::get_phone_number(void)
+{
+	return (this->phone_number);
+}
+
+std::string	Contact::get_darkest_secret(void)
+{
+	return (this->darkest_secret);
 }
