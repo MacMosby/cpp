@@ -17,7 +17,7 @@ stuf */
 
 #include <iostream>
 
-void	scream(char *str)
+void	scream(std::string str)
 {
 	int	i = 0;
 	char c;
