@@ -40,7 +40,7 @@ void	PhoneBook::place_in_phonebook(Contact entry)
 
 	while (i < 8)
 	{
-		if (this->contacts[i].first_name == "")
+		if (this->contacts[i].get_first_name() == "")
 		{
 			this->contacts[i] = entry;
 			break ;
@@ -61,57 +61,57 @@ void	PhoneBook::add(void)
 
 	std::cout << "Please enter your information." << std::endl;
 	std::cout << "First name: ";
-	std::cin >> first;
+	std::getline(std::cin, first);
 	if (std::cin.eof())
 		return;
 	while (first == "")
 	{
 		std::cout << "Invalid input, please try again: ";
-		std::cin >> first;
+		std::getline(std::cin, first);
 		if (std::cin.eof())
 			return;
 	}
 	std::cout << "Last name: ";
-	std::cin >> last;
+	std::getline(std::cin, last);
 	if (std::cin.eof())
 		return;
 	while (last == "")
 	{
 		std::cout << "Invalid input, please try again: ";
-		std::cin >> last;
+		std::getline(std::cin, last);
 		if (std::cin.eof())
 			return;
 	}
 	std::cout << "Nickname: ";
-	std::cin >> nick;
+	std::getline(std::cin, nick);
 	if (std::cin.eof())
 		return;
 	while (nick == "")
 	{
 		std::cout << "Invalid input, please try again: ";
-		std::cin >> nick;
+		std::getline(std::cin, nick);
 		if (std::cin.eof())
 			return;
 	}
 	std::cout << "Phone number: ";
-	std::cin >> num;
+	std::getline(std::cin, num);
 	if (std::cin.eof())
 		return;
 	while (num == "")
 	{
 		std::cout << "Invalid input, please try again: ";
-		std::cin >> num;
+		std::getline(std::cin, num);
 		if (std::cin.eof())
 			return;
 	}
 	std::cout << "Darkest secret: ";
-	std::cin >> secret;
+	std::getline(std::cin, secret);
 	if (std::cin.eof())
 		return;
 	while (secret == "")
 	{
 		std::cout << "Invalid input, please try again: ";
-		std::cin >> secret;
+		std::getline(std::cin, secret);
 		if (std::cin.eof())
 			return;
 	}
@@ -149,22 +149,22 @@ void	PhoneBook::display_contact_detail(std::string contact_detail) const
 void	PhoneBook::display_contact(int index) const
 {
 	std::cout << std::endl;
-	std::cout << "First name: " << this->contacts[index].first_name << std::endl;
-	std::cout << "Last name: " << this->contacts[index].last_name << std::endl;
-	std::cout << "Nickname: " << this->contacts[index].nickname << std::endl;
-	std::cout << "Phone number: " << this->contacts[index].phone_number << std::endl;
-	std::cout << "Darkest secret: " << this->contacts[index].darkest_secret << std::endl;
+	std::cout << "First name: " << this->contacts[index].get_first_name() << std::endl;
+	std::cout << "Last name: " << this->contacts[index].get_last_name() << std::endl;
+	std::cout << "Nickname: " << this->contacts[index].get_nickname() << std::endl;
+	std::cout << "Phone number: " << this->contacts[index].get_phone_number() << std::endl;
+	std::cout << "Darkest secret: " << this->contacts[index].get_darkest_secret() << std::endl;
 	std::cout << std::endl;
 }
 
 void	PhoneBook::display_contact_line(Contact entry, int index) const
 {
 	std::cout << "         " << index << "|";
-	display_contact_detail(entry.first_name);
+	display_contact_detail(entry.get_first_name());
 	std::cout << "|";
-	display_contact_detail(entry.last_name);
+	display_contact_detail(entry.get_last_name());
 	std::cout << "|";
-	display_contact_detail(entry.nickname);
+	display_contact_detail(entry.get_nickname());
 	std::cout << std::endl;
 }
 
@@ -184,7 +184,7 @@ void	PhoneBook::display_all_entries(void) const
 
 	while (i < 8)
 	{
-		if (this->contacts[i].first_name != "")
+		if (this->contacts[i].get_first_name() != "")
 			display_contact_line(this->contacts[i], i + 1);
 		i++;
 	}
@@ -195,7 +195,7 @@ void	PhoneBook::search(void) const
 {
 	int			index;
 
-	if (this->contacts[0].first_name == "")
+	if (this->contacts[0].get_first_name() == "")
 	{
 		std::cout << "Phonebook empty - No entries available." << std::endl;
 		return ;
@@ -203,14 +203,16 @@ void	PhoneBook::search(void) const
 	this->display_all_entries();
 	std::cout << "Who do you want to call? Choose index: ";
 	std::cin >> index;
+	std::cin.ignore(1, '\n');
 	if (std::cin.eof())
 		return;
-	while (index < 1 || index > 8 || this->contacts[index - 1].first_name == "")
+	while (index < 1 || index > 8 || this->contacts[index - 1].get_first_name() == "")
 	{
 		std::cout << "Invalid input, please try again." << std::endl;
 		std::cin >> index;
+		std::cin.ignore(1, '\n');
 		if (std::cin.eof())
-		return;
+			return;
 	}
 	this->display_contact(index - 1);
 }

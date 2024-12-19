@@ -14,12 +14,12 @@
 #include <iostream>
 
 Contact::Contact(void)
-: first_name(""), last_name(""), nickname(""), phone_number(""), darkest_secret("")
+: first_name_(""), last_name_(""), nickname_(""), phone_number_(""), darkest_secret_("")
 {
 }
 
 Contact::Contact(std::string first, std::string last, std::string nick, std::string num, std::string secret)
-: first_name(first), last_name(last), nickname(nick), phone_number(num), darkest_secret(secret)
+: first_name_(first), last_name_(last), nickname_(nick), phone_number_(num), darkest_secret_(secret)
 {
 }
 
@@ -27,27 +27,27 @@ Contact::~Contact(void)
 {
 }
 
-std::string	Contact::get_first_name(void)
+std::string	Contact::get_first_name(void) const
 {
-	return (this->first_name);
+	return (this->first_name_);
 }
 
-std::string	Contact::get_last_name(void)
+std::string	Contact::get_last_name(void) const
 {
-	return (this->last_name);
+	return (this->last_name_);
 }
 
-std::string	Contact::get_nickname(void)
+std::string	Contact::get_nickname(void) const
 {
-	return (this->nickname);
+	return (this->nickname_);
 }
 
-std::string	Contact::get_phone_number(void)
+std::string	Contact::get_phone_number(void) const
 {
-	return (this->phone_number);
+	return (this->phone_number_);
 }
 
-std::string	Contact::get_darkest_secret(void)
+std::string	Contact::get_darkest_secret(void) const
 {
-	return (this->darkest_secret);
+	return (this->darkest_secret_);
 }
