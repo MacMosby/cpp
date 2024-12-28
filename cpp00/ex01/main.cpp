@@ -26,7 +26,6 @@ int	main()
 		std::cout << "Please type SEARCH if you want to search for a contact." << std::endl;
 		std::cout << "Please type EXIT to exit the phone book." << std::endl;
 		std::cout << std::endl;
-		//std::cout << input << std:: endl;
 		std::getline(std::cin, input);
 		if (std::cin.eof())
 			break;

@@ -193,7 +193,7 @@ void	PhoneBook::display_all_entries(void) const
 
 void	PhoneBook::search(void) const
 {
-	int			index;
+	int			index = 0;
 
 	if (this->contacts[0].get_first_name() == "")
 	{
@@ -202,15 +202,21 @@ void	PhoneBook::search(void) const
 	}
 	this->display_all_entries();
 	std::cout << "Who do you want to call? Choose index: ";
-	std::cin >> index;
-	std::cin.ignore(1, '\n');
+	if (std::cin >> index)
+		std::cout << "You entered " << index << std::endl;
+	else
+		std::cin.clear();
+	std::cin.ignore(1000, '\n');
 	if (std::cin.eof())
 		return;
 	while (index < 1 || index > 8 || this->contacts[index - 1].get_first_name() == "")
 	{
 		std::cout << "Invalid input, please try again." << std::endl;
-		std::cin >> index;
-		std::cin.ignore(1, '\n');
+		if (std::cin >> index)
+			std::cout << "You entered " << index << std::endl;
+		else
+			std::cin.clear();
+		std::cin.ignore(1000, '\n');
 		if (std::cin.eof())
 			return;
 	}
