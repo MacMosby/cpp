@@ -5,29 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrodenbu <mrodenbu@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/16 13:17:47 by mrodenbu          #+#    #+#             */
-/*   Updated: 2024/10/16 13:17:49 by mrodenbu         ###   ########.fr       */
+/*   Created: 2025/01/03 10:45:54 by mrodenbu          #+#    #+#             */
+/*   Updated: 2025/01/03 10:45:56 by mrodenbu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(void)
+void	Zombie::announce(void) const
 {
-	std::cout << "Default constructor called." << std::endl;
+	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-Zombie::Zombie(std::string name) : name(name)
+void	Zombie::setName(std::string name)
 {
-	std::cout << "Constructor with name is called. Zombie " << this->name << " is born." << std::endl;
+	this->_name = name;
+}
+
+Zombie::Zombie(void)
+{
+	std::cout << "Random Zombie created." << std:: endl;
+}
+
+Zombie::Zombie(std::string name) : _name(name)
+{
+	std::cout << "Zombie " << this->_name << " created." << std::endl;
 }
 
 Zombie::~Zombie(void)
 {
-	std::cout << "Zombie " << this->name << " is dead." << std::endl;
+	std::cout << "Zombie " << this->_name << " destroyed." << std::endl;
 }
 
-void	Zombie::announce( void )
-{
-	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+

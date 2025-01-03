@@ -5,22 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrodenbu <mrodenbu@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 13:33:11 by mrodenbu          #+#    #+#             */
-/*   Updated: 2024/10/21 13:33:12 by mrodenbu         ###   ########.fr       */
+/*   Created: 2025/01/03 11:26:22 by mrodenbu          #+#    #+#             */
+/*   Updated: 2025/01/03 11:26:23 by mrodenbu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie	*zombieHorde( int N, std::string name )
+Zombie	*zombieHorde(int N, std::string name)
 {
-	int		i = 0;
 	Zombie	*zombieHorde = new Zombie[N];
 
+	int	i = 0;
 	while (i < N)
 	{
-		Zombie	newZombie = Zombie(name);
-		zombieHorde[i] = newZombie;
+		zombieHorde[i].setName(name);
 		i++;
 	}
 	return (zombieHorde);
