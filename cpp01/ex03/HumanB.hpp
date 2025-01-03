@@ -5,15 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrodenbu <mrodenbu@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 16:48:45 by mrodenbu          #+#    #+#             */
-/*   Updated: 2024/10/21 16:48:46 by mrodenbu         ###   ########.fr       */
+/*   Created: 2025/01/03 12:06:35 by mrodenbu          #+#    #+#             */
+/*   Updated: 2025/01/03 12:06:36 by mrodenbu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HUMAN_B_H
 # define HUMAN_B_H
 
-# include <iostream>
 # include "Weapon.hpp"
 
 class HumanB
@@ -27,8 +26,10 @@ class HumanB
 		void	setWeapon(Weapon &weapon);
 
 	private:
-		std::string	name;
-		Weapon		*weapon;
+
+		std::string	_name;
+		Weapon		*_weapon;
+
 };
 
 #endif

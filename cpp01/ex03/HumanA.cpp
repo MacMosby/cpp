@@ -5,21 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrodenbu <mrodenbu@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 16:49:17 by mrodenbu          #+#    #+#             */
-/*   Updated: 2024/10/21 16:49:18 by mrodenbu         ###   ########.fr       */
+/*   Created: 2025/01/03 12:06:24 by mrodenbu          #+#    #+#             */
+/*   Updated: 2025/01/03 12:06:25 by mrodenbu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string name, Weapon &weapon)
-: name(name), weapon(weapon)
-{}
-
-HumanA::~HumanA(void)
-{}
-
 void	HumanA::attack(void)
 {
-	std::cout << this->name << " attacks with their " << this->weapon.getType() << std::endl;
+	std::cout << this->_name << " attacks with their " << this->_weapon.getType() << std::endl;
+}
+
+HumanA::HumanA(std::string name, Weapon &weapon) : _name(name), _weapon(weapon)
+{
+	std::cout << "Human A " << this->_name << " is born and has a " << this->_weapon.getType() << std::endl;
+}
+
+HumanA::~HumanA(void)
+{
+	std::cout << "Human A " << this->_name << " has died." << std::endl;
 }

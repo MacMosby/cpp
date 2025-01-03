@@ -5,12 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrodenbu <mrodenbu@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/16 13:17:25 by mrodenbu          #+#    #+#             */
-/*   Updated: 2024/10/16 13:17:27 by mrodenbu         ###   ########.fr       */
+/*   Created: 2025/01/03 12:05:30 by mrodenbu          #+#    #+#             */
+/*   Updated: 2025/01/03 12:05:32 by mrodenbu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
@@ -33,5 +32,5 @@ int main()
 		club.setType("some other type of club");
 		jim.attack();
 	}
-	return (0);
+	return 0;
 }

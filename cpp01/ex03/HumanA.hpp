@@ -5,15 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrodenbu <mrodenbu@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 16:48:40 by mrodenbu          #+#    #+#             */
-/*   Updated: 2024/10/21 16:48:42 by mrodenbu         ###   ########.fr       */
+/*   Created: 2025/01/03 12:06:12 by mrodenbu          #+#    #+#             */
+/*   Updated: 2025/01/03 12:06:14 by mrodenbu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HUMAN_A_H
 # define HUMAN_A_H
 
-# include <iostream>
 # include "Weapon.hpp"
 
 class HumanA
@@ -26,8 +25,10 @@ class HumanA
 		void	attack(void);
 
 	private:
-		std::string	name;
-		Weapon		&weapon;
+
+		std::string	_name;
+		Weapon		&_weapon;
+
 };
 
 #endif
