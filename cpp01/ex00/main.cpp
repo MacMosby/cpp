@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrodenbu <mrodenbu@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/16 13:17:25 by mrodenbu          #+#    #+#             */
-/*   Updated: 2024/10/16 13:17:27 by mrodenbu         ###   ########.fr       */
+/*   Created: 2025/01/03 10:46:14 by mrodenbu          #+#    #+#             */
+/*   Updated: 2025/01/03 10:46:16 by mrodenbu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,12 @@ int	main()
 {
 	Zombie	zombie = Zombie("Marc");
 	zombie.announce();
-	Zombie *new_zombie = newZombie("Kars");
-	new_zombie->announce();
-	delete new_zombie;
+
+	Zombie *kars = newZombie("Kars");
+	kars->announce();
+
 	randomChump("Magda");
+
+	delete kars;
+	return (0);
 }

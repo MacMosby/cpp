@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mrodenbu <mrodenbu@student.42berlin.d      +#+  +:+       +#+         #
+#    By: marcrodenbusch <marcrodenbusch@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/10/04 16:18:18 by mrodenbu          #+#    #+#              #
-#    Updated: 2024/10/04 16:18:20 by mrodenbu         ###   ########.fr        #
+#    Created: 2024/10/07 10:29:13 by mrodenbu          #+#    #+#              #
+#    Updated: 2024/10/22 00:32:29 by marcrodenbu      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
