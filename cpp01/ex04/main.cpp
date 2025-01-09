@@ -15,40 +15,54 @@
 
 int main(int argc, char **argv)
 {
-	std::string filename;
-	std::string new_filename;
-	std::string s1;
-	std::string s2;
+	if (argc != 4)
+		return (1);
+
+	std::string infile = argv[1];
+	std::string outfile = infile + ".replace";
+	std::string	s1 = argv[2];
+	std::string s2 = argv[3];
+	std::string line;
 	std::string content;
 
-	if (argc != 4)
-		return (0);
-	filename = argv[1];
-	new_filename = filename.append(".replace");
-	s1 = argv[2];
-	s2 = argv[3];
-	std::ifstream infile(argv[1]);
-	if (!infile)
+	std::ifstream inFileStream;
+	inFileStream.open(infile.c_str());
+	if (inFileStream.fail())
 	{
-		std::cerr << "Failed to open the file " << filename << "." << std::endl;
+		std::cout << "Error opening infile." << std::endl;
 		return (1);
 	}
-	std::string line;
-	while (std::getline(infile, line))
+	while (getline(inFileStream, line))
 	{
 		content.append(line);
+		content.append("\n");
 	}
-	infile.close();
+	inFileStream.close();
 
-	std::cout << content << std::endl;
-
-	/* std::ofstream outfile(new_filename);
-	if (!outfile)
+	// content manipulation
+	if (s1.compare(s2))
 	{
-		std::cerr << "Failed to open the file " << new_filename << "." << std::endl;
+		while (true)
+		{
+			size_t index = content.find(s1);
+			if (index == std::string::npos)
+				break;
+			content.erase(index, s1.size());
+			content.insert(index, s2);
+		}
+	}
+
+	// open new file
+	std::ofstream outFileStream;
+	outFileStream.open(outfile.c_str());
+	if (outFileStream.fail())
+	{
+		std::cout << "Error opening outfile." << std::endl;
 		return (1);
 	}
-	outfile << content;
-	outfile.close(); */
+	outFileStream << content;
+	// close new file
+	outFileStream.close();
+
 	return (0);
 }
