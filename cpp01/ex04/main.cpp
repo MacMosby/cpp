@@ -24,6 +24,7 @@ int main(int argc, char **argv)
 	std::string s2 = argv[3];
 	std::string line;
 	std::string content;
+	size_t index = 0;
 
 	std::ifstream inFileStream;
 	inFileStream.open(infile.c_str());
@@ -44,11 +45,12 @@ int main(int argc, char **argv)
 	{
 		while (true)
 		{
-			size_t index = content.find(s1);
+			index = content.find(s1, index);
 			if (index == std::string::npos)
 				break;
 			content.erase(index, s1.size());
 			content.insert(index, s2);
+			index += s2.size();
 		}
 	}
 
