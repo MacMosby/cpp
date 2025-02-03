@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME := myFirstClassInOrthodoxCanonicalForm
+NAME := towardsAMoreUsefulFixedPointNumberClass
 
 SRC := main.cpp Fixed.cpp
 

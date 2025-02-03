@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME := myFirstClassInOrthodoxCanonicalForm
+NAME := nowWeReTalking
 
 SRC := main.cpp Fixed.cpp
 
