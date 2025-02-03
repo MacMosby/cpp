@@ -32,6 +32,24 @@ class Fixed
 		int		toInt( void ) const;
 
 		Fixed	&operator=(Fixed const &ref);	// copy assignment operator
+		Fixed	operator+(Fixed const &ref) const;
+		Fixed	&operator++();
+		Fixed	operator++(int);
+		Fixed	&operator--();
+		Fixed	operator--(int);
+		Fixed	operator-(Fixed const &ref) const;
+		Fixed	operator*(Fixed const &ref) const;
+		Fixed	operator/(Fixed const &ref) const;
+		bool	operator>(Fixed const &ref) const;
+		bool	operator<(Fixed const &ref) const;
+		bool	operator>=(Fixed const &ref) const;
+		bool	operator<=(Fixed const &ref) const;
+		bool	operator==(Fixed const &ref) const;
+		bool	operator!=(Fixed const &ref) const;
+		static Fixed &min(Fixed &left, Fixed &right);
+		static const Fixed &min(Fixed const &left, Fixed const &right);
+		static Fixed &max(Fixed &left, Fixed &right);
+		static const Fixed &max(Fixed const &left, Fixed const &right);
 
 	private:
 

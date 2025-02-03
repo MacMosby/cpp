@@ -54,6 +54,132 @@ Fixed	&Fixed::operator=(Fixed const &ref)
 	return (*this);
 }
 
+Fixed	Fixed::operator+(Fixed const &ref) const
+{
+	return Fixed(this->toFloat() + ref.toFloat());
+}
+
+Fixed	&Fixed::operator++()
+{
+	++this->_value;
+	return *this;
+}
+
+Fixed	Fixed::operator++(int)
+{
+	Fixed	tmp = *this;
+	this->_value++;
+	return tmp;
+}
+
+Fixed	Fixed::operator-(Fixed const &ref) const
+{
+	return Fixed(this->toFloat() - ref.toFloat());
+}
+
+Fixed	&Fixed::operator--()
+{
+	--this->_value;
+	return *this;
+}
+
+Fixed	Fixed::operator--(int)
+{
+	Fixed	tmp = *this;
+	this->_value--;
+	return tmp;
+}
+
+Fixed	Fixed::operator*(Fixed const &ref) const
+{
+	return Fixed(this->toFloat() * ref.toFloat());
+}
+
+Fixed	Fixed::operator/(Fixed const &ref) const
+{
+	return Fixed(this->toFloat() / ref.toFloat());
+}
+
+bool	Fixed::operator>(Fixed const &ref) const
+{
+	if (this->_value > ref.getRawBits())
+		return true;
+	else
+		return false;
+}
+
+bool	Fixed::operator<(Fixed const &ref) const
+{
+	if (this->_value < ref.getRawBits())
+		return true;
+	else
+		return false;
+}
+
+bool	Fixed::operator>=(Fixed const &ref) const
+{
+	if (this->_value >= ref.getRawBits())
+		return true;
+	else
+		return false;
+}
+
+bool	Fixed::operator<=(Fixed const &ref) const
+{
+	if (this->_value <= ref.getRawBits())
+		return true;
+	else
+		return false;
+}
+
+bool	Fixed::operator==(Fixed const &ref) const
+{
+	if (this->_value == ref.getRawBits())
+		return true;
+	else
+		return false;
+}
+
+bool	Fixed::operator!=(Fixed const &ref) const
+{
+	if (this->_value != ref.getRawBits())
+		return true;
+	else
+		return false;
+}
+
+Fixed &Fixed::min(Fixed &left, Fixed &right)
+{
+	if (left < right)
+		return left;
+	else
+		return right;
+}
+
+Fixed const &Fixed::min(Fixed const &left, Fixed const &right)
+{
+	if (left < right)
+		return left;
+	else
+		return right;
+}
+
+Fixed &Fixed::max(Fixed &left, Fixed &right)
+{
+	if (left >= right)
+		return left;
+	else
+		return right;
+}
+
+Fixed const &Fixed::max(Fixed const &left, Fixed const &right)
+{
+	if (left >= right)
+		return left;
+	else
+		return right;
+}
+
 int		Fixed::getRawBits(void) const
 {
 	//std::cout << "getRawBits member function called" << std::endl;
