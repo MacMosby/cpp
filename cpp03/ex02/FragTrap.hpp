@@ -1,45 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrodenbu <mrodenbu@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/03 20:38:00 by mrodenbu          #+#    #+#             */
-/*   Updated: 2025/02/03 20:38:02 by mrodenbu         ###   ########.fr       */
+/*   Created: 2025/02/07 14:47:08 by mrodenbu          #+#    #+#             */
+/*   Updated: 2025/02/07 14:47:10 by mrodenbu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#ifndef FRAGTRAP_H
+# define FRAGTRAP_H
 
-int	main()
+# include "ScavTrap.hpp"
+
+class FragTrap : public ClapTrap
 {
-	int	i;
-	FragTrap a("Ernie");
-	FragTrap b("Bert");
-	FragTrap c(a);
+	public:
 
-	a.attack(b.getName());
-	c.attack(b.getName());
-	b.attack("Someone random");
+		FragTrap(void);
+		FragTrap(std::string name);
+		FragTrap(FragTrap const &ref);
+		~FragTrap(void);
 
-	i = 0;
-	while (i < 4)
-	{
-		c.beRepaired(2);
-		i++;
-	}
+		FragTrap	&operator=(FragTrap const &ref);
 
-	i = 0;
-	while (i < 11)
-	{
-		c.takeDamage(11);
-		i++;
-	}
-	c.beRepaired(2);
-	c.attack(b.getName());
-	a.highFivesGuys();
-	b.highFivesGuys();
+		void		highFivesGuys(void);
 
-	return 0;
-}
+};
+
+
+
+
+#endif
