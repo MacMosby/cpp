@@ -11,3 +11,29 @@
 /* ************************************************************************** */
 
 
+#ifndef WRONG_ANIMAL_H
+# define WRONG_ANIMAL_H
+
+# include <string>
+# include <iostream>
+
+class WrongAnimal
+{
+
+	public:
+
+		WrongAnimal();
+		WrongAnimal(WrongAnimal const &ref);
+		virtual ~WrongAnimal();
+
+		WrongAnimal			&operator=(WrongAnimal const &ref);
+
+		virtual void	makeSound() const;
+		std::string		getType() const;
+
+	protected:
+
+		std::string		_type;
+};
+
+#endif

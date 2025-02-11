@@ -10,4 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef WRONG_CAT_H
+# define WRONG_CAT_H
 
+# include "WrongAnimal.hpp"
+
+class WrongCat : public WrongAnimal
+{
+
+	public:
+
+		WrongCat();
+		WrongCat(WrongCat const &ref);
+		~WrongCat();
+
+		WrongCat	&operator=(WrongCat const &ref);
+
+		//void	makeSound() const;
+
+};
+
+#endif
