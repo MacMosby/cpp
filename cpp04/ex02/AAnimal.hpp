@@ -10,25 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-# define ANIMAL_H
+#ifndef AANIMAL_H
+# define AANIMAL_H
 
 # include <string>
 # include <iostream>
 # include "Brain.hpp"
 
-class Animal
+class AAnimal
 {
 
 	public:
 
-		Animal();
-		Animal(Animal const &ref);
-		virtual ~Animal();
+		AAnimal();
+		AAnimal(AAnimal const &ref);
+		virtual ~AAnimal();
 
-		virtual Animal	&operator=(Animal const &ref);
+		virtual AAnimal	&operator=(AAnimal const &ref);
 
-		virtual void	makeSound() const;
+		virtual void	makeSound() const = 0;
 		std::string		getType() const;
 		virtual Brain	&getBrain() const;
 

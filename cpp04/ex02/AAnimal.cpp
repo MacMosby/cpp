@@ -10,44 +10,44 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
-Animal::Animal() : _type("")
+AAnimal::AAnimal() : _type("")
 {
-	std::cout << "Animal default constructor called" << std::endl;
+	std::cout << "AAnimal default constructor called" << std::endl;
 }
 
-Animal::Animal(Animal const &ref)
+AAnimal::AAnimal(AAnimal const &ref)
 {
-	std::cout << "Animal copy constructor called" << std::endl;
+	std::cout << "AAnimal copy constructor called" << std::endl;
 	this->_type = ref._type;
 }
 
-Animal::~Animal()
+AAnimal::~AAnimal()
 {
-	std::cout << "Animal destructor called" << std::endl;
+	std::cout << "AAnimal destructor called" << std::endl;
 }
 
-Animal	&Animal::operator=(Animal const &ref)
+AAnimal	&AAnimal::operator=(AAnimal const &ref)
 {
-	std::cout << "Animal copy assignment operator called" << std::endl;
+	std::cout << "AAnimal copy assignment operator called" << std::endl;
 	this->_type = ref._type;
 	this->brain = ref.brain;
 	return *this;
 }
 
-void	Animal::makeSound() const
+void	AAnimal::makeSound() const
 {
-	std::cout << "Animal makes generic sound." << std::endl;
+	std::cout << "AAnimal makes generic sound." << std::endl;
 }
 
-std::string	Animal::getType() const
+std::string	AAnimal::getType() const
 {
 	return this->_type;
 }
 
-Brain	&Animal::getBrain() const
+Brain	&AAnimal::getBrain() const
 {
 	return *(this->brain);
 }

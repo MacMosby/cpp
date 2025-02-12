@@ -16,7 +16,7 @@
 
 int main()
 {
-	Animal	*animals[6];
+	AAnimal	*animals[6];
 
 	animals[0] = new Cat;
 	animals[1] = new Cat;
