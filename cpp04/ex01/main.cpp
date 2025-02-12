@@ -16,19 +16,32 @@
 
 int main()
 {
-	const WrongAnimal* meta = new WrongAnimal();
-	const Animal* j = new Dog();
-	const WrongAnimal* i = new WrongCat();
+	Animal	*animals[6];
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
+	animals[0] = new Cat;
+	animals[1] = new Cat;
+	animals[2] = new Cat;
+	animals[3] = new Dog;
+	animals[4] = new Dog;
+	animals[5] = new Dog;
 
-	delete meta;
-	delete i;
-	delete j;
+	for (int i = 0; i < 6; i++)
+	{
+		std::cout << "I am a " << animals[i]->getType() << ": ";
+		animals[i]->makeSound();
+	}
+
+	for (int i = 0; i < 6; i++)
+		delete animals[i];
+
+	Cat a;
+	a.getBrain().setIdea(0, "Hello World!");
+	Cat b(a);
+	std::cout << "Cat a: " << a.getBrain().getIdea(0) << std::endl;
+	std::cout << "Cat b: " << b.getBrain().getIdea(0) << std::endl;
+	a.getBrain().setIdea(0, "Hey people!");
+	std::cout << "Cat a: " << a.getBrain().getIdea(0) << std::endl;
+	std::cout << "Cat b: " << b.getBrain().getIdea(0) << std::endl;
 
 	return 0;
 }

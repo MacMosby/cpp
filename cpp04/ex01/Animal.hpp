@@ -15,6 +15,7 @@
 
 # include <string>
 # include <iostream>
+# include "Brain.hpp"
 
 class Animal
 {
@@ -25,14 +26,17 @@ class Animal
 		Animal(Animal const &ref);
 		virtual ~Animal();
 
-		Animal			&operator=(Animal const &ref);
+		virtual Animal	&operator=(Animal const &ref);
 
 		virtual void	makeSound() const;
 		std::string		getType() const;
+		virtual Brain	&getBrain() const;
 
 	protected:
 
 		std::string		_type;
+		Brain			*brain;
+
 };
 
 #endif

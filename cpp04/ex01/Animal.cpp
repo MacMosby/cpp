@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 Animal::Animal() : _type("")
 {
@@ -30,7 +31,9 @@ Animal::~Animal()
 
 Animal	&Animal::operator=(Animal const &ref)
 {
+	std::cout << "Animal copy assignment operator called" << std::endl;
 	this->_type = ref._type;
+	this->brain = ref.brain;
 	return *this;
 }
 
@@ -42,4 +45,9 @@ void	Animal::makeSound() const
 std::string	Animal::getType() const
 {
 	return this->_type;
+}
+
+Brain	&Animal::getBrain() const
+{
+	return *(this->brain);
 }
