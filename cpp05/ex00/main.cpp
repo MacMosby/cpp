@@ -22,7 +22,16 @@ int main()
 	Bureaucrat f("Nobody", 151);
 	Bureaucrat g("Brain", 0);
 
-	std::cout << d.getName() << "'s grade is: " << d.getGrade() << std::endl;
+	std::cout << a;
+	std::cout << b;
+	std::cout << c;
+	std::cout << d;
+	std::cout << e;
+	std::cout << f;
+	std::cout << g;
+
+
+	std::cout << d;
 	try
 	{
 		d.decrementGrade();
@@ -32,7 +41,7 @@ int main()
 		std::cerr << exc.what() << '\n';
 	}
 
-	std::cout << d.getName() << "'s grade is: " << d.getGrade() << std::endl;
+	std::cout << d;
 	try
 	{
 		d.incrementGrade();
@@ -41,12 +50,12 @@ int main()
 	{
 		std::cerr << exc.what() << '\n';
 	}
-	std::cout << d.getName() << "'s grade is: " << d.getGrade() << std::endl;
+	std::cout << d;
 
 
 
 
-	std::cout << e.getName() << "'s grade is: " << e.getGrade() << std::endl;
+	std::cout << e;
 	try
 	{
 		e.incrementGrade();
@@ -56,7 +65,7 @@ int main()
 		std::cerr << exc.what() << '\n';
 	}
 
-	std::cout << e.getName() << "'s grade is: " << e.getGrade() << std::endl;
+	std::cout << e;
 	try
 	{
 		e.decrementGrade();
