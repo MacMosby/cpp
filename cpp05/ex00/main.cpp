@@ -27,21 +27,45 @@ int main()
 	{
 		d.decrementGrade();
 	}
-	catch(Bureaucrat::GradeTooLowException &e)
+	catch(Bureaucrat::GradeTooLowException &exc)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << exc.what() << '\n';
 	}
+
+	std::cout << d.getName() << "'s grade is: " << d.getGrade() << std::endl;
+	try
+	{
+		d.incrementGrade();
+	}
+	catch(Bureaucrat::GradeTooLowException &exc)
+	{
+		std::cerr << exc.what() << '\n';
+	}
+	std::cout << d.getName() << "'s grade is: " << d.getGrade() << std::endl;
+
+
+
 
 	std::cout << e.getName() << "'s grade is: " << e.getGrade() << std::endl;
 	try
 	{
 		e.incrementGrade();
 	}
-	catch(Bureaucrat::GradeTooLowException &e)
+	catch(Bureaucrat::GradeTooHighException &exc)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << exc.what() << '\n';
 	}
 
+	std::cout << e.getName() << "'s grade is: " << e.getGrade() << std::endl;
+	try
+	{
+		e.decrementGrade();
+	}
+	catch(Bureaucrat::GradeTooHighException &exc)
+	{
+		std::cerr << exc.what() << '\n';
+	}
+	std::cout << e.getName() << "'s grade is: " << e.getGrade() << std::endl;
 
 
 	return 0;
