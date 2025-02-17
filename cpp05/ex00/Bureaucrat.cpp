@@ -23,12 +23,22 @@ Bureaucrat::Bureaucrat(std::string name) : _name(name), _grade(150)
 }
 
 
-Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
+Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
-	if (this->_grade < 1)
-		throw GradeTooHighException();
-	else if (this->_grade > 150)
-		throw GradeTooLowException();
+	try
+	{
+		this->_grade = grade;
+		if (this->_grade < 1)
+			throw GradeTooHighException();
+		else if (this->_grade > 150)
+			throw GradeTooLowException();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+		std::cout << "Grade is set do default value 150." << std::endl;
+		this->_grade = 150;
+	}
 	std::cout << "Bureaucrat data constructor called" << std::endl;
 }
 

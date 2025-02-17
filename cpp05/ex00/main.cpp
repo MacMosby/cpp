@@ -19,8 +19,8 @@ int main()
 	Bureaucrat c("Joe", 42);
 	Bureaucrat d("Homer");
 	Bureaucrat e("Einstein", 1);
-	//Bureaucrat f("Nobody", 151);
-	//Bureaucrat g("Brain", 0);
+	Bureaucrat f("Nobody", 151);
+	Bureaucrat g("Brain", 0);
 
 	std::cout << d.getName() << "'s grade is: " << d.getGrade() << std::endl;
 	try
