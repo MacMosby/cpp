@@ -10,4 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PRESIDENTIAL_PARDON_FORM_H
+# define PRESIDENTIAL_PARDON_FORM_H
 
+# include "AForm.hpp"
+# include <string>
+# include <iostream>
+
+class PresidentialPardonForm : public AForm
+{
+
+	public:
+
+		PresidentialPardonForm();
+		PresidentialPardonForm(std::string target);
+		PresidentialPardonForm(PresidentialPardonForm const &ref);
+		~PresidentialPardonForm();
+
+		PresidentialPardonForm	&operator=(PresidentialPardonForm const &ref);
+
+	private:
+
+		std::string	_target;
+
+};
+
+#endif

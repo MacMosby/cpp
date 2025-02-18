@@ -10,4 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SHRUBBERY_CREATION_FORM_H
+# define SHRUBBERY_CREATION_FORM_H
 
+# include "AForm.hpp"
+# include <string>
+# include <iostream>
+
+class ShrubberyCreationForm : public AForm
+{
+
+	public:
+
+		ShrubberyCreationForm();
+		ShrubberyCreationForm(std::string target);
+		ShrubberyCreationForm(ShrubberyCreationForm const &ref);
+		~ShrubberyCreationForm();
+
+		ShrubberyCreationForm	&operator=(ShrubberyCreationForm const &ref);
+
+	private:
+
+		std::string	_target;
+
+};
+
+#endif

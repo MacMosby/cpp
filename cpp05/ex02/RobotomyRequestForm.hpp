@@ -10,4 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef ROBOTOMY_REQUEST_FORM_H
+# define ROBOTOMY_REQUEST_FORM_H
 
+# include "AForm.hpp"
+# include <string>
+# include <iostream>
+
+class RobotomyRequestForm : public AForm
+{
+
+	public:
+
+		RobotomyRequestForm();
+		RobotomyRequestForm(std::string target);
+		RobotomyRequestForm(RobotomyRequestForm const &ref);
+		~RobotomyRequestForm();
+
+		RobotomyRequestForm	&operator=(RobotomyRequestForm const &ref);
+
+	private:
+
+		std::string	_target;
+
+};
+
+#endif
