@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
+#include "Bureaucrat.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm() :
 AForm("PresidentialPardonForm", 25, 5), _target("standard")
@@ -41,4 +42,11 @@ PresidentialPardonForm	&PresidentialPardonForm::operator=(PresidentialPardonForm
 	if (this != &ref)
 		this->_target = ref._target;
 	return *this;
+}
+
+void	PresidentialPardonForm::act(Bureaucrat const &executor) const
+{
+	std::cout << this->_target
+			  << " has been pardoned by Zaphod Beeblebrox. Zaphod has been asked for it by "
+			  << executor.getName() << std::endl;
 }

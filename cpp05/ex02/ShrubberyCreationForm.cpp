@@ -43,3 +43,28 @@ ShrubberyCreationForm	&ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 		this->_target = ref._target;
 	return *this;
 }
+
+void	ShrubberyCreationForm::act(Bureaucrat const &executor) const
+{
+	std::string		fileName = this->_target + "_shrubbery";
+	std::ofstream	outFileStream;
+
+	outFileStream.open(fileName.c_str());
+	if (outFileStream.fail())
+	{
+		std::cerr << "Error opening outfile." << std::endl;
+		return ;
+	}
+
+	outFileStream << "      *      \n";
+    outFileStream << "     ***     \n";
+    outFileStream << "    *****    \n";
+    outFileStream << "   *******   \n";
+    outFileStream << "  *********  \n";
+    outFileStream << " *********** \n";
+    outFileStream << "      |      \n";
+
+	outFileStream.close();
+
+	std::cout << "ASCII tree written into file: " << fileName << " by " << executor.getName() << std::endl;
+}

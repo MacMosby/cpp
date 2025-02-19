@@ -29,6 +29,8 @@ class ShrubberyCreationForm : public AForm
 
 		ShrubberyCreationForm	&operator=(ShrubberyCreationForm const &ref);
 
+		void					act(Bureaucrat const &executor) const;
+
 	private:
 
 		std::string	_target;

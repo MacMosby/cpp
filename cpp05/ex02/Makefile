@@ -12,9 +12,10 @@
 
 NAME :=  formUpMaggots
 
-SRC := main.cpp Bureaucrat.cpp AForm.cpp
+SRCS := main.cpp AForm.cpp Bureaucrat.cpp PresidentialPardonForm.cpp \
+		RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 
-OBJ := $(SRC:%.cpp=%.o)
+OBJS := $(SRCS:%.cpp=%.o)
 
 CPP := c++
 
@@ -24,14 +25,14 @@ STDFLAG := -std=c++98
 
 all:	$(NAME)
 
-$(NAME):	$(OBJ)
-	$(CPP) $(WFLAGS) $(STDFLAG) -o $(NAME) $(OBJ)
+$(NAME):	$(OBJS)
+	$(CPP) $(WFLAGS) $(STDFLAG) $(OBJS) -o $(NAME)
 
 %.o: %.cpp
-	$(CPP) $(WFLAGS) $(STDFLAG) -c -o $@ $<
+	$(CPP) $(WFLAGS) $(STDFLAG) -c $< -o $@
 
 clean:
-	rm -f *.o
+	rm -f $(OBJS)
 
 fclean:	clean
 	rm -f $(NAME)

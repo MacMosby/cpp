@@ -15,20 +15,6 @@
 
 int main()
 {
-	Bureaucrat a("Nobody", 151);
-
-	AForm f("TaxForm", 149, 149);
-	std::cout << f << std::endl;
-	AForm g(f);
-	std::cout << g << std::endl;
-	AForm h("Sign Up Form");
-	std::cout << h << std::endl;
-
-	std::cout << a;
-	a.signForm(f);
-	a.incrementGrade();
-	a.signForm(f);
-	std::cout << a;
 
 	return 0;
 }

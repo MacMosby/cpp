@@ -16,6 +16,8 @@
 # include "AForm.hpp"
 # include <string>
 # include <iostream>
+# include <cstdlib>
+
 
 class RobotomyRequestForm : public AForm
 {
@@ -28,6 +30,8 @@ class RobotomyRequestForm : public AForm
 		~RobotomyRequestForm();
 
 		RobotomyRequestForm	&operator=(RobotomyRequestForm const &ref);
+
+		void				act(Bureaucrat const &executor) const;
 
 	private:
 

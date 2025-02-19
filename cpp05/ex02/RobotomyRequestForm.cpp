@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
+#include "Bureaucrat.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm() :
 AForm("RobotomyRequestForm", 72, 45), _target("standard")
@@ -41,4 +42,13 @@ RobotomyRequestForm	&RobotomyRequestForm::operator=(RobotomyRequestForm const &r
 	if (this != &ref)
 		this->_target = ref._target;
 	return *this;
+}
+
+void	RobotomyRequestForm::act(Bureaucrat const &executor) const
+{
+	std::cout << "VRRRRRR! VRRRRRR!" << std::endl;
+	if (rand() % 2)
+		std::cout << "Robotomy of " << this->_target << " successfully executed by " << executor.getName() << std::endl;
+	else
+		std::cout << "Robotomy of " << this->_target << " unsuccessfully executed by " << executor.getName() << std::endl;
 }
