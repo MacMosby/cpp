@@ -10,10 +10,10 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME :=  noYouNeedForm28BNot28C
+NAME :=  atLeastThisBeatsCoffeeMaking
 
 SRCS := main.cpp AForm.cpp Bureaucrat.cpp PresidentialPardonForm.cpp \
-		RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
+		RobotomyRequestForm.cpp ShrubberyCreationForm.cpp Intern.cpp
 
 OBJS := $(SRCS:%.cpp=%.o)
 

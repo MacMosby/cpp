@@ -10,4 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef INTERN_H
+# define INTERN_H
 
+# include <string>
+# include <iostream>
+# include "AForm.hpp"
+
+class Intern
+{
+
+	public:
+
+		Intern();
+		Intern(Intern const &ref);
+		~Intern();
+
+		Intern	&operator=(Intern const &ref);
+
+		AForm	*makeForm(std::string formName, std::string formTarget);
+};
+
+#endif
