@@ -102,20 +102,26 @@ void	Bureaucrat::signForm(AForm &form)
 
 void	Bureaucrat::executeForm(AForm const &form)
 {
+	bool	toExecute = 1;
+
 	try
 	{
 		form.execute(*this);
 	}
 	catch(AForm::FormNotSignedException &exc)
 	{
+		std::cerr << "The Bureaucrat cannot execute the form. " <<std::endl;
 		std::cerr << exc.what() << '\n';
+		toExecute = 0;
 	}
 	catch(GradeTooLowException &exc)
 	{
-		std::cerr << "The Bureaucrat cannot sign the form. " <<std::endl;
+		std::cerr << "The Bureaucrat cannot execute the form. " <<std::endl;
 		std::cerr << exc.what() << '\n';
+		toExecute = 0;
 	}
-
+	if (toExecute)
+		std::cout << this->_name << " executed " << form.getName() << std::endl;
 }
 
 std::ostream	&operator<<(std::ostream &out, Bureaucrat const &input)
