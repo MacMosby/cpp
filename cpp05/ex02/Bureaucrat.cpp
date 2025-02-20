@@ -114,7 +114,7 @@ void	Bureaucrat::executeForm(AForm const &form)
 		std::cerr << exc.what() << '\n';
 		toExecute = 0;
 	}
-	catch(GradeTooLowException &exc)
+	catch(AForm::GradeTooLowException &exc)
 	{
 		std::cerr << "The Bureaucrat cannot execute the form. " <<std::endl;
 		std::cerr << exc.what() << '\n';
