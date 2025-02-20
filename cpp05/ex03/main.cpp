@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Intern.hpp"
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
@@ -18,23 +19,19 @@
 
 int main()
 {
-	Bureaucrat	dan("Dan", 42);
-	Bureaucrat	kars("Kars", 1);
-	Bureaucrat	intern("Intern", 150);
+	Intern	intern;
+	AForm	*scf;
+	AForm	*rrf;
+	AForm	*ppf;
 
-	ShrubberyCreationForm	tarSCF("home");
-	RobotomyRequestForm		tarRRF("R2D2");
-	PresidentialPardonForm	tarPPF("Marc");
+	scf = intern.makeForm("XXX", "random");
+	scf = intern.makeForm("ShrubberyCreationForm", "home");
+	rrf = intern.makeForm("RobotomyRequestForm", "R2D2");
+	ppf = intern.makeForm("PresidentialPardonForm", "Marc");
 
-	//AForm test;
-
-	intern.signForm(tarSCF);
-	dan.signForm(tarRRF);
-	kars.executeForm(tarSCF);
-	kars.executeForm(tarRRF);
-	kars.signForm(tarPPF);
-	dan.executeForm(tarPPF);
-	kars.executeForm(tarPPF);
+	delete scf;
+	delete rrf;
+	delete ppf;
 
 	return 0;
 }
