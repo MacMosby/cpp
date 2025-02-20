@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME :=  formUpMaggots
+NAME :=  noYouNeedForm28BNot28C
 
 SRCS := main.cpp AForm.cpp Bureaucrat.cpp PresidentialPardonForm.cpp \
 		RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
