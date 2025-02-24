@@ -13,16 +13,26 @@
 #ifndef SCALAR_CONVERTER_H
 # define SCALAR_CONVERTER_H
 
-class ScalarConveter
+# include <iostream>
+# include <string>
+# include <cstdlib>
+
+class ScalarConverter
 {
 
 	public:
 
-		ScalarConveter();
-		ScalarConveter(ScalarConveter const &ref);
-		~ScalarConveter();
 
-		ScalarConveter	&operator=(ScalarConveter const &ref);
+
+		static void		convert(std::string s);
+
+	private:
+
+		ScalarConverter();
+		ScalarConverter(ScalarConverter const &ref);
+		~ScalarConverter();
+
+		ScalarConverter	&operator=(ScalarConverter const &ref);
 
 };
 

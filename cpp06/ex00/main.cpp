@@ -10,8 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ScalarConverter.hpp"
+
 int main()
 {
+	ScalarConverter::convert("\'g\'");
+	ScalarConverter::convert("0");
+	ScalarConverter::convert("1043");
+	ScalarConverter::convert("42.4f");
 
 	return 0;
 }

@@ -12,7 +12,7 @@
 
 NAME :=  conversionOfScalarTypes
 
-SRC := main.cpp
+SRC := main.cpp ScalarConverter.cpp
 
 OBJ := $(SRC:%.cpp=%.o)
 
